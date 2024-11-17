@@ -1,0 +1,24 @@
+.navList {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navItem {
+    margin-right: 15px;
+}
+
+.navItem a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.navItem.active a {
+    color: #ff6600;
+}
+
+.navItem a:hover {
+    color: #ff6600;
+}
