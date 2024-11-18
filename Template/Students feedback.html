@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+         hr.class-1 {
+        border-top: 0.5px solid #000000;}
+
+        .container {
+            background-color: #00FFFF;
+            padding: 10px;
+            overflow: hidden;
+            display:flex;
+             align-items:center;
+             justify-content: space-between; }
+
+
+               #first-tag{
+            font-size: 150px;
+             font-family: 'Times New Roman', sans-serif;
+        }
+        #Para1-tag{
+         font-size: 30px; /* Adjust the value as needed */
+            text-align: center;
+             font-family: 'Times New Roman', sans-serif;
+        }
+               #Second-tag{
+            font-size: 50px;
+             font-family: 'Times New Roman', sans-serif;
+
+        }
+        #Para2-tag{
+         font-size: 30px;
+            text-align: center;
+             font-family: 'Times New Roman', sans-serif;
+        }
+             #Third-tag{
+            font-size: 50px;
+             font-family: 'Times New Roman', sans-serif;
+        }
+        #Para2-tag{
+         font-size: 30px; /* Adjust the value as needed */
+            text-align: center;
+             font-family: 'Times New Roman', sans-serif;
+        }
+
+
+        .headerTopLeft,
+        .header-Gnb {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+
+            }
+
+
+        .headerTopLeft li,
+        .header-Gnb li {
+            float: left;
+            margin-right: 10px;
+        }
+   .search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.search-icon {
+    font-size: 20px;
+    cursor: pointer;
+    /* Add additional styling as needed */
+}
+
+        .headerTopLeft li a,
+        .header-Gnb li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .headerTopLeft li.active {
+            background-color: #4CAF50;
+        }
+
+        .headerTopLeft li a:hover,
+        .header-Gnb li a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .header-Gnb {
+            background-color: darkblue;
+            padding: 10px;
+            }
+            .bh { display:flex;
+           flex-direction:row-reverse;
+           align-items:center;
+             padding-right: 20px;
+           }
+
+        .gnb {
+            list-style: none;
+        }
+
+        .gnb li {
+            display: inline-block;
+            position: relative;
+            padding: 10px 15px;
+        }
+
+        .gnb li ul {
+            display: none;
+            position: absolute;
+            background-color:lightblue;
+            padding: 10px;
+            top: 100%;
+            left: 0;
+            z-index: 1;
+        }
+
+        .gnb li:hover ul {
+            display: block;
+        }
+
+        .gnb li a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .gnb li:hover {
+            background-color: #ecc2f2;
+        }
+
+        /* Chatbot icon styles */
+         #chatbot-icon {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 1000;
+        font-size: 60px; /* Adjust the font size as needed */
+        color: white; /* Set the color to match your design */
+        }
+         /* Chatbot iframe styles (initially hidden) */
+    #chatbot-iframe {
+        display: none;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 400px; /* Adjust the width as needed */
+        height: 600px; /* Adjust the height as needed */
+        border: 1px solid #ccc;
+        z-index: 1001; /* En the iframe appears above other elements */
+        }
+         .image-container {
+            position: relative;
+            text-align: center;
+            color: white; /* Text color */
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: 70%; /* Adjust as needed */
+            left: 50%; /* Adjust as needed */
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+        }
+          .container60 {
+          width:60%;
+      display: flex;
+      align-items: center;
+       margin-left: 300px;
+        margin-right: 20px;
+       border: 4px solid #ccc;
+        height: 500px;
+         Padding:5px;
+         justify-content:center;
+
+
+.container90 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 1440px;
+  height: 322px;
+  background: #DEE4EDFF;
+  border-radius: 4px;
+  box-shadow: 0px 0px 1px #171a1f, 0px 0px 2px #171a1f;
+}
+
+    </style>
+    <title>JCFS website</title>
+</head>
+
+<body>
+
+    <div class="container">
+          <img src="{{ url_for('static', filename='logo.png') }}" alt="media accounts" />
+        <ul class="headerTopLeft">
+            <li class="disabled"><a href="#self">HOME</a></li>
+            <li><a href="https://www.solbridge.ac.kr/story/main/index.jsp" target="_blank">SolBridge</a></li>
+            <li><a href="https://www.endicott.ac.kr" target="_blank">Endicott College</a></li>
+            <li><a href="https://pams.wsu.ac.kr:444/main/index.jsp" target="_blank">PAMS</a></li>
+        </ul>
+         <div class="search-box">
+        <input type="text" placeholder="Search...">
+         <div class="search-icon">&#128269;</div>
+    </div>
+
+    </div>
+
+<div class="bh">
+       <img src="{{ url_for('static', filename='jcfsLogo.png') }}" alt="Jcfs log "  height="40" />
+    <article id="header-Gnb">
+
+
+            <ul class="gnb">
+
+
+                <li><a href="/page/index.jsp?code=jcfs020401">Academics</a>
+                    <ul>
+                        <li style="display:none"><a href="/page/index.jsp?code=jcfs020100">Undergraduate Program Structure</a></li>
+                        <li style="display:none"><a href="/page/index.jsp?code=jcfs020200">Bachelor Programs</a></li>
+                        <li style="display:none"><a href="/page/index.jsp?code=jcfs0203">Graduate Studies</a></li>
+                        <li><a href="/page/index.jsp?code=jcfs020401">Human and Digital Interface (HADI)</a></li>
+                        <li><a href="https://pams.wsu.ac.kr:444/main/index.jsp" target="_blank">PAMS Certificate Programs</a></li>
+                    </ul>
+                </li>
+                <li><a href="/page/index.jsp?code=jcfs0301">Admissions</a>
+						<ul>
+							<li><a href="/page/index.jsp?code=jcfs0301">International Student Admissions</a></li>
+							<li><a href="/page/index.jsp?code=jcfs030201">Scholarships</a></li>
+							<li><a href=" {{url_for('page3')}} ">Tuition and Fees</a></li>
+							<li><a href="http://apply.wsu.ac.kr/apply/?sr=a2e187a8-a373-45a7-b258-dbb66b39b6f5" target="_blank">Apply Now</a></li>
+						</ul>
+					</li>
+					<li><a href="#self">Faculty</a>
+						<ul>
+							<li><a href="/page/index.jsp?code=jcfs0502">Faculty</a></li>
+						</ul>
+					</li>
+					<li><a href="#self">Student Life</a>
+						<ul>
+							<li><a href="/page/index.jsp?code=jcfs040101">Campus Life (Our Campuses)</a></li>
+							<li><a href="/page/index.jsp?code=jcfs040201">Facilities</a></li>
+                            <li><a href= " {{url_for('page3')}} ">Students Feedback </a></li>
+                              <li><a href=" {{url_for('page4')}} ">Students Projects </a></li>
+						</ul>
+					</li>
+					<li><a href="#self">Contact</a>
+						<ul>
+							<li><a href="/page/index.jsp?code=jcfs0501">Administration</a></li>
+							<li><a href="/page/index.jsp?code=jcfs0503">International Relations Team</a></li>
+						</ul>
+					</li>
+                 <li><a href="/page/index.jsp?code=jcfs0101">About JCFS</a>
+                    <ul>
+                        <li><a href="/page/index.jsp?code=jcfs0101">The JCFS Difference</a></li>
+                        <li><a href="/page/index.jsp?code=jcfs010201">Leadership</a></li>
+                        <li><a href="/page/index.jsp?code=jcfs010301">Vision & Strategy</a></li>
+                        <li><a href="/page/index.jsp?code=jcfs0104">History</a></li>
+                        <li><a href="/page/index.jsp?code=jcfs0105">Visit Campus</a></li>
+                        <li><a href="/page/index.jsp?code=jcfs0106">Campus Map</a></li>
+                    </ul>
+                </li>
+					<li><a >News & Events</a>
+						<ul>
+							<li><a href="/board/index.jsp?code=jcfs0601">News & Events</a></li>
+
+						</ul>
+					</li>
+            </ul>
+          <hr class="class-1" />
+
+
+    </article>
+</div>
+ <h1 id="lovely" >Feedback of Jcfs Students </h1>
+     <hr class="class-1" />
+<div class="container60">
+   <video width="720" height="420" controls>
+       <source src="{{ url_for('static', filename='Vern.mp4') }}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+</div>
+    <hr class="class-1" />
+<div class="container60">
+   <video width="720" height="420" controls>
+       <source src="{{ url_for('static', filename='Sulagna.mp4') }}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+</div>
+
+    <div class="container90">
+ <ul class="text1">
+
+
+                <li><a href="/page/index.jsp?code=jcfs020401">Academics</a>
+                    <ul>
+
+                        <li><a> Human and Digital Interface (HADI)</a></li>
+                          <li><a> Human and Digital Interface (HADI)</a></li>
+                          <li><a> Human and Digital Interface (HADI)</a></li>
+                          <li><a> Human and Digital Interface (HADI)</a></li>
+                          <li><a> Human and Digital Interface (HADI)</a></li>
+
+                    </ul>
+ </ul>
+    </div>
+
+
+
+</body>
